@@ -25,7 +25,14 @@
   js = d.createElement(s); js.id = id;
   js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.4";
   fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
+}(document, 'script', 'facebook-jssdk'));
+
+FB.api('/me', function(response) {
+    alert("Name: "+ response.name + "\nFirst name: "+ response.first_name + "ID: "+response.id);
+    var img_link = "http://graph.facebook.com/"+response.id+"/picture"
+});
+
+</script>
 
 	<!-- Header -->
 	<div class="header-menu-bg">
