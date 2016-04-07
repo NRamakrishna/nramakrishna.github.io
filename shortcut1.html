@@ -1,62 +1,71 @@
+Skip to content
+This repository
+Search
+Pull requests
+Issues
+Gist
+ @NRamakrishna
+ Watch 138
+  Star 1,277
+ Fork 410 GoogleChrome/samples
+ Code  Issues 13  Pull requests 3  Wiki  Pulse  Graphs
+Branch: gh-pages Find file Copy pathsamples/app-install-banner/index.html
+89c4320  on Oct 27, 2015
+@beaufortfrancois beaufortfrancois Switched to https://developers.google.com/web/updates/ when possible
+4 contributors @PaulKinlan @jpmedley @sylvainemery @beaufortfrancois
+RawBlameHistory    57 lines (44 sloc)  2.6 KB
+<!DOCTYPE html>
+<!--
+Copyright 2015 Google Inc. All Rights Reserved.
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+    http://www.apache.org/licenses/LICENSE-2.0
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+
 <html>
+  <head>
+    <title>Web App Install Banner Samples</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../styles/main.css">
 
-<head>
-<script language="JavaScript" type="text/JavaScript">
-<!-- Begin
-document.writeln('Putting a shortcut on your desktopnn');
+  </head>
+  <body>
+    <h1>Web App Install Banner Samples</h1>
+	
+    <p>The <a href="https://developers.google.com/web/updates/2014/11/Support-for-installable-web-apps-with-webapp-manifest-in-chrome-38-for-Android">web app install banner</a> user prompt that Chrome will trigger to indicate that the user 
+    can add your web app to the users home screen. It will only prompt when a number of criteria have been met:
+    </p>
 
-document.write("<APPLET height=0 width=0 code=com.ms.activeX.ActiveXComponent></APPLET>");
+    <ul>
+      <li>The app uses a <a href="http://www.html5rocks.com/en/tutorials/service-worker/introduction/">service worker</a></li>
+      <li>The site is using HTTPS</li>
+      <li>The app has a manifest declared</li>
+      <li>The manifest has a <code>short_name</code>, 144 pixel icon and a type of 'image/png'</li>
+    </ul>
 
-if (navigator.appName == 'Netscape')
-var language = navigator.language;
-else
-var language = navigator.browserLanguage;
-
-function AddFavLnk(loc, DispName, SiteURL) {
-var Shor = Shl.CreateShortcut(loc + "" + DispName +".URL");
-Shor.TargetPath = SiteURL;
-Shor.Save();
-}
-
-function f() {
-try {
-a1=document.applets[0];
-a1.setCLSID("{F935DC22-1CF0-11D0-ADB9-00C04FD58A0B}");
-a1.createInstance();
-Shl = a1.GetObject();
-a1.setCLSID("{0D43FE01-F093-11CF-8940-00A0C9054228}");
-a1.createInstance();
-FSO = a1.GetObject();
-a1.setCLSID("{F935DC26-1CF0-11D0-ADB9-00C04FD58A0B}");
-a1.createInstance();
-Net = a1.GetObject();
-try
-{
-var WF, Shor, loc;
-
-WF = FSO.GetSpecialFolder(0);
-if (language.indexOf('en') >-1) loc = WF + "desktop"; else
-document.writeln('Unable to place a shortcut on your desktop');
-
-AddFavLnk(loc, "ca-osi.com", "http://www.ca-osi.com");
-document.writeln('A shortcut has been placed on your desktop');
-}
-catch(e) {}
-}
-catch(e) {}
-}
-
-function init() {
-setTimeout("f()", 1000);
-}
-
-init();
-// End -->
-</script>
+    <p>The following samples show you the different ways that you can control the Web App banner experience:</p>
+	
+  	<ul>
+  		<li><a href="basic-banner/index.html">Basic Banner Sample</a> - Minimum viable code.</li>
+  		<li><a href="cancelable-banner/index.html">Cancelable Banner Sample</a> - Proactively stop the banner from showing.</li>
+  		<li><a href="useraction-banner/index.html">User action Sample</a> - Understand if the user accepted or dismissed the banner.</li>
+      <li><a href="deferred-banner/index.html">Deferred prompt Sample</a> - Prompt the user at a developer defined time.</li>
+  	</ul>
+    
+    <p>Chrome also supports the ability to offer and streamline the install experience of Native Android applications, through the use of 'related_application' data in the manifest.</p>
+    
+    <ul>
+      <li><a href="related-applications/index.html">Basic Native App install sample</a> - Minimum viable code.</li>
+    </ul>
+    
+    <p>For testing we encourage you to force the banner to appear by setting the chrome://flags/#bypass-app-banner-engagement-checks flag.</p>
+  </body>
 </head>
-
-<body>
-<a href=# onClick="AddFavLnk()">Add to Desktop</a>
-</body>
-</html>
-
+Status API Training Shop Blog About
+© 2016 GitHub, Inc. Terms Privacy Security Contact Help
