@@ -1,7 +1,7 @@
 
-<!DOCTYPE html>
+<!doctype html>
 <!--
-Copyright 2015 Google Inc. All Rights Reserved.
+Copyright 2014 Google Inc. All Rights Reserved.
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
 You may obtain a copy of the License at
@@ -12,45 +12,60 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 -->
-
-<html>
+<html lang="en">
   <head>
-    <title>Web App Install Banner Samples</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="../styles/main.css">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
+    <meta name="description" content="Sample illustrating the use of the Web Application Manifest.">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Web Application Manifest Sample</title>
+
+    <link rel="manifest" href="manifest.json">
+    <!-- See https://developers.google.com/web/updates/2014/11/Support-for-theme-color-in-Chrome-39-for-Android -->
+    <meta name="theme-color" content="#db5945">
+
+    <link rel="icon" href="../images/favicon.ico">
+
+    <link rel="stylesheet" href="../styles/main.css">
   </head>
+
   <body>
-    <h1>Web App Install Banner Samples</h1>
-	
-    <p>The <a href="https://developers.google.com/web/updates/2014/11/Support-for-installable-web-apps-with-webapp-manifest-in-chrome-38-for-Android">web app install banner</a> user prompt that Chrome will trigger to indicate that the user 
-    can add your web app to the users home screen. It will only prompt when a number of criteria have been met:
+    <h1>Web Application Manifest Sample</h1>
+    <p>Available in <a href="https://www.chromestatus.com/feature/6488656873259008">Chrome 39+</a></p>
+
+    <h3>Hey! I'm a web app!</h3>
+
+    <p>
+      In lieu of the <code>&lt;meta></code> and <code>&lt;link></code> elements used in
+      <a href="https://github.com/GoogleChrome/samples/blob/gh-pages/placeholder-name/index.html#L31">other samples</a>,
+      I'm using a <a href="http://w3c.github.io/manifest/">web application manifest</a> via a
+      <code>&lt;link rel="manifest" href="<a href="manifest.json">manifest.json</a>"></code> tag in my <code>&lt;head></code>.
     </p>
 
-    <ul>
-      <li>The app uses a <a href="http://www.html5rocks.com/en/tutorials/service-worker/introduction/">service worker</a></li>
-      <li>The site is using HTTPS</li>
-      <li>The app has a manifest declared</li>
-      <li>The manifest has a <code>short_name</code>, 144 pixel icon and a type of 'image/png'</li>
-    </ul>
 
-    <p>The following samples show you the different ways that you can control the Web App banner experience:</p>
-	
-  	<ul>
-  		<li><a href="basic-banner/index.html">Basic Banner Sample</a> - Minimum viable code.</li>
-  		<li><a href="cancelable-banner/index.html">Cancelable Banner Sample</a> - Proactively stop the banner from showing.</li>
-  		<li><a href="useraction-banner/index.html">User action Sample</a> - Understand if the user accepted or dismissed the banner.</li>
-      <li><a href="deferred-banner/index.html">Deferred prompt Sample</a> - Prompt the user at a developer defined time.</li>
-  	</ul>
-    
-    <p>Chrome also supports the ability to offer and streamline the install experience of Native Android applications, through the use of 'related_application' data in the manifest.</p>
-    
-    <ul>
-      <li><a href="related-applications/index.html">Basic Native App install sample</a> - Minimum viable code.</li>
-    </ul>
-    
-    <p>For testing we encourage you to force the banner to appear by setting the chrome://flags/#bypass-app-banner-engagement-checks flag.</p>
+    <p>
+      Try me out in Chrome 39+ on Android: from Chrome's menu, select
+      <strong>Add to homescreen</strong>.
+    </p>
+
+    <p>
+      When you tap the new icon on your homescreen, I'll launch as a standalone app,
+      with the page displayed in landscape orientation.
+    </p>
+
+    <script>
+      /* jshint ignore:start */
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-53563471-1', 'auto');
+      ga('send', 'pageview');
+      /* jshint ignore:end */
+    </script>
+    <!-- Built with love using Web Starter Kit -->
   </body>
-</head>
-Status API Training Shop Blog About
-© 2016 GitHub, Inc. Terms Privacy Security Contact Help
+</html>
