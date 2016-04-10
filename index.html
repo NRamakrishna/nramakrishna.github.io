@@ -18,10 +18,7 @@
       <h3>Hello test</h3>
       <button id="goFS">Go fullscreen<button>
 <script>
-   var goFS = document.getElementById("goFS");
-   goFS.addEventListener("click", function() {
-      document.body.requestFullscreen();
-   }, false);
+document.documentElement.requestFullscreen();
 </script>
       <script type="text/javascript">
       	window.scrollTo(0,1);
