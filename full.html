@@ -11,15 +11,26 @@
 <body>
   <p>The script on this page should hide the address bar on iOS and Android.ww</p>
  <script>
-  window.addEventListener("load",function() {
-  setTimeout(function(){
-    window.scrollTo(0, 10);
-  }, 1);
-  setTimeout(function(){
-    window.scrollTo(0, 10);
-  }, 0
- );
-});
+<script type="text/javascript">
+    window.onload = maxWindow;
+
+    function maxWindow() {
+        window.moveTo(0, 0);
+
+
+        if (document.all) {
+            top.window.resizeTo(screen.availWidth, screen.availHeight);
+        }
+
+        else if (document.layers || document.getElementById) {
+            if (top.window.outerHeight < screen.availHeight || top.window.outerWidth < screen.availWidth) {
+                top.window.outerHeight = screen.availHeight;
+                top.window.outerWidth = screen.availWidth;
+            }
+        }
+    }
+
+</script> 
  </script>
 </body>
 </html>
