@@ -7,15 +7,18 @@
   <meta name='viewport' content='width=device-width, initial-scale=1.0' >
   <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no' name='viewport' />
   <title>Cross-device Address Bar Hide - Example 1</title>
+  
   <style>
     body { min-height: 980px; }
   </style>
-  <script>fscommand("fullscreen","true");</script>
+  <script>BrowserWindowOpener opener = new BrowserWindowOpener(MyPopup.class);
+        opener.setFeatures("location=0");</script>
 </head>
 <body>
   <p>The script on this page should hide the address bar on iOS and Android.ww</p>
  
-
+BrowserWindowOpener opener = new BrowserWindowOpener(MyPopup.class);
+        opener.setFeatures("location=0");
  
 </body>
 </html>
