@@ -7,11 +7,23 @@
   <meta name='viewport' content='width=device-width, initial-scale=1.0' >
   <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no' name='viewport' />
   <title>Cross-device Address Bar Hide - Example 1</title>
+  <button onclick="doFullScreen();">button</button>
   
   <style>
     body { min-height: 980px; }
   </style>
-  <script>stage.displayState = StageDisplayState.FULL_SCREEN</script>
+  <script>
+  function doFullScreen()
+{
+    if (Stage.displayState == "normal")
+    {
+        Stage.displayState = "fullScreen";
+    }
+    else
+    {
+        Stage.displayState = "normal";
+    }
+}</script>
 </head>
 <body>
   <p>The script on this page should hide the address bar on iOS and Android.ww</p>
