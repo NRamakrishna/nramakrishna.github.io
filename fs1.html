@@ -1,22 +1,32 @@
-<style>
-  html, body, div {
-    /* Height and width fallback for older browsers. */
-    height: 100%;
-    width: 100%;
+<script>
+  // url bar hiding
+(function() {
     
-    /* Set the height to match that of the viewport. */
-    height: 100vh;
-    
-    /* Set the width to match that of the viewport. */
-    width: 100vw;
-    
-    /* Remove any browser-default margins. */
-    margin: 0;
-}
+  var win = window,
+      doc = win.document;
 
-div {
-    background: tomato;
-}
-  
-</style>
-<div></div>
+  if ( !location.hash || !win.addEventListener ) {
+
+    window.scrollTo( 0, 1 );
+    var scrollTop = 1,
+
+    bodycheck = setInterval(function(){
+      if( doc.body ){
+        clearInterval( bodycheck );
+        scrollTop = "scrollTop" in doc.body ? doc.body.scrollTop : 1;
+        win.scrollTo( 0, scrollTop === 1 ? 0 : 1 );
+      } 
+    }, 15 );
+
+    if (win.addEventListener) {
+      win.addEventListener("load", function(){
+        setTimeout(function(){
+          //reset to hide addr bar at onload
+          win.scrollTo( 0, scrollTop === 1 ? 0 : 1 );
+        }, 0);
+      }, false );
+    }
+  }
+
+})();
+</script>
