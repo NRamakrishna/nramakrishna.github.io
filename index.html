@@ -16,7 +16,17 @@
    </head>
    <body>
       <h3>Hello test</h3>
-      <button id="goFS">Go fullscreen<button>
+    html {
+    padding-bottom: 1000px;
+}
+
+body {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+}
 <script>
 document.documentElement.requestFullscreen();
 </script>
