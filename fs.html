@@ -1,0 +1,64 @@
+<div class="container">
+  <p><em>Click the button below to enter the element into fullscreen mode. </em></p>
+  <div class="element" id="element">
+    <p>I'm in fullscreen mode!</p>
+  </div>
+  <br>
+  <button onclick="var el = document.getElementById('element'); el.webkitRequestFullscreen();">Go Full Screen!</button>
+</div>
+<style type="text/css">
+	.el:-webkit-full-screen {
+  width: 100vw;
+  height: 100vh;
+}
+
+.el:-moz-full-screen {
+  width: 100vw;
+  height: 100vh;
+}
+
+.el:-ms-fullscreen {
+  width: 100vw;
+  height: 100vh;
+}
+
+.el:fullscreen {
+  width: 100vw;
+  height: 100vh;
+}
+                
+
+figure:-webkit-full-screen figcaption {
+  display: none;
+}
+
+figure:-moz-full-screen figcaption {
+  display: none;
+}
+
+figure:-ms-fullscreen figcaption {
+  display: none;
+}
+
+figure:fullscreen figcaption {
+  display: none;
+}
+                
+:-webkit-full-screen .footnotes {
+  display: none;
+}
+
+:-moz-full-screen .footnotes {
+  display: none;
+}
+
+:-ms-fullscreen .footnotes {
+  display: none;
+}
+
+:fullscreen .footnotes {
+  display: none;
+}
+
+
+</style>
